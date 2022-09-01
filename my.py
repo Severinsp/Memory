@@ -1,1 +1,1 @@
-print("Neger")
+print("segel")
