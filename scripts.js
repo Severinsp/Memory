@@ -54,6 +54,13 @@ function resetBoard() {
     secondCard = null;
 }
 
+function resetGame() {
+    cards.forEach(card => card.classList.remove('flip'));
+    setTimeout(function() {
+        window.location.reload();
+    }, 200);
+}
+
 (function shuffle() {
     cards.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 12);
