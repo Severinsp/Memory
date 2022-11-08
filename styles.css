@@ -38,6 +38,20 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    position: relative;
+}
+
+.endscreen {
+    visibility: hidden;
+    background-color: #514a6a;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.title {
+    font-size: 5vw;
+    color: rgb(153, 90, 51);
 }
 
 .memory-card {

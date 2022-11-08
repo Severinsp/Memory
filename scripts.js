@@ -3,6 +3,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+var count = 0;
 
 function flipCard() {
     if (lockBoard) return;
@@ -34,7 +35,10 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-
+    count++;
+    if (count >= 6) {
+        endGame();
+    }
     resetBoard();
 }
 
@@ -54,6 +58,13 @@ function resetBoard() {
     secondCard = null;
 }
 
+function endGame() {
+    console.log(count);
+    setTimeout(() => {
+        document.getElementById("endscreen").style.visibility = "visible";
+    }, 1500);
+}
+
 function resetGame() {
     cards.forEach(card => card.classList.remove('flip'));
     setTimeout(function() {
@@ -61,11 +72,14 @@ function resetGame() {
     }, 200);
 }
 
+
+//shuffle ausgeklammert um einfacher zu testen
 (function shuffle() {
-    cards.forEach(card => {
+    /* cards.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 12);
         card.style.order = ramdomPos;
-    });
+    }); */
 })();
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
