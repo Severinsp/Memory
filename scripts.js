@@ -99,7 +99,7 @@ function resetGame() {
 }
 
 function changeBigGame() {
-    //document.getElementById("memory-card").style.margin = "100px";
+    //document.getElementById("memory-card").style.width = "100px";
     document.getElementById("memory-game-big").style.visibility = "visible";
     document.getElementById("memory-game").style.visibility = "hidden";
     count = 0;
