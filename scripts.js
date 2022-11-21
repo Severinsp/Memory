@@ -5,11 +5,11 @@ let lockBoard = false;
 let firstCard, secondCard;
 var count = 0;
 var player1 = true;
+var points1 = 0;
+var points2 = 0;
 
-if (player1) {
-    //document.getElementById("endscreen").style.visibility = "visible";
-    document.getElementById("LabelWHO").style.visibility == "hidden"
-}
+updateScore();
+
 
 window.onload = function() {
     console.log('Dokument geladen');
@@ -46,6 +46,12 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    if (player1) {
+        points1++;
+    } else {
+        points2++;
+    }
+    updateScore();
     count++;
     if (document.getElementById("memory-game-big").style.visibility == "visible") {
         if (count >= 12) {
@@ -64,7 +70,8 @@ function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-
+        player1 = !player1;
+        updateScore();
         resetBoard();
     }, 1500);
 }
@@ -77,8 +84,9 @@ function resetBoard() {
 }
 
 function endGame() {
-    console.log(count);
     setTimeout(() => {
+        if (points1 > points2) { document.getElementById("title").textContent = "Spieler 1 hat gewonnen"; } else if (points1 < points2) { document.getElementById("title").textContent = "Spieler 2 hat gewonnen"; } else { document.getElementById("title").textContent = "Unetschieden"; }
+
         document.getElementById("endscreen").style.visibility = "visible";
     }, 1500);
 }
@@ -91,9 +99,23 @@ function resetGame() {
 }
 
 function changeBigGame() {
+    //document.getElementById("memory-card").style.margin = "100px";
     document.getElementById("memory-game-big").style.visibility = "visible";
     document.getElementById("memory-game").style.visibility = "hidden";
     count = 0;
+    points1 = 0;
+    points2 = 0;
+    player1 = true;
+    updateScore();
+}
+
+function updateScore() {
+    document.getElementById("LabelPoints").textContent = points1 + " - " + points2;
+    if (player1) {
+        document.getElementById("LabelWHO").textContent = "Spieler 1 ist am Zug";
+    } else {
+        document.getElementById("LabelWHO").textContent = "Spieler 2 ist am Zug";
+    }
 }
 
 //shuffle ausgeklammert um einfacher zu testen
