@@ -4,6 +4,17 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 var count = 0;
+var player1 = true;
+
+if (player1) {
+    //document.getElementById("endscreen").style.visibility = "visible";
+    document.getElementById("LabelWHO").style.visibility == "hidden"
+}
+
+window.onload = function() {
+    console.log('Dokument geladen');
+    //document.getElementById('memory-game').innerHTML = ``;
+}
 
 function flipCard() {
     if (lockBoard) return;
@@ -36,9 +47,16 @@ function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     count++;
-    if (count >= 6) {
-        endGame();
+    if (document.getElementById("memory-game-big").style.visibility == "visible") {
+        if (count >= 12) {
+            endGame();
+        }
+    } else {
+        if (count >= 6) {
+            endGame();
+        }
     }
+
     resetBoard();
 }
 
@@ -72,6 +90,11 @@ function resetGame() {
     }, 200);
 }
 
+function changeBigGame() {
+    document.getElementById("memory-game-big").style.visibility = "visible";
+    document.getElementById("memory-game").style.visibility = "hidden";
+    count = 0;
+}
 
 //shuffle ausgeklammert um einfacher zu testen
 (function shuffle() {

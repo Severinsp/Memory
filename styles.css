@@ -31,8 +31,7 @@ body {
     background: #060AB2;
 }
 
-.memory-game {
-    visibility: hidden;
+#memory-game {
     width: 100%;
     height: 100vh;
     margin: auto;
@@ -40,13 +39,15 @@ body {
     flex-wrap: wrap;
     perspective: 1000px;
     position: absolute;
-    padding-left: 20vh;
-    padding-right: 20vh;
+    padding-left: 30vh;
+    padding-right: 30vh;
+    visibility: visible;
 }
 
-.memory-game-big {
+#memory-game-big {
+    visibility: hidden;
     width: 100%;
-    height: 100vh;
+    height: 50%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -70,7 +71,7 @@ body {
 }
 
 .memory-card {
-    width: calc(25% - 10px);
+    width: calc(24% - 10px);
     height: calc(33.333% - 10px);
     margin: 0.5%;
     position: relative;
@@ -79,6 +80,18 @@ body {
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
 }
+
+
+/* .memory-card-big {
+    width: calc(24% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 0.5%;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+} */
 
 .memory-card:active {
     transform: scale(0.97);
@@ -107,5 +120,25 @@ body {
 .NewGameButton {
     position: fixed;
     top: 20px;
+    left: 20px;
+}
+
+.BigGameButton {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+}
+
+.LabelWHO {
+    position: fixed;
+    color: aliceblue;
+    top: 140px;
+    left: 20px;
+}
+
+.LabelPoints {
+    position: fixed;
+    color: aliceblue;
+    top: 200px;
     left: 20px;
 }
