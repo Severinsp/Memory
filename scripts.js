@@ -7,6 +7,8 @@ var count = 0;
 var player1 = true;
 var points1 = 0;
 var points2 = 0;
+var einzelspieler = true;
+
 
 updateScore();
 
@@ -85,7 +87,7 @@ function resetBoard() {
 
 function endGame() {
     setTimeout(() => {
-        if (points1 > points2) { document.getElementById("title").textContent = "Spieler 1 hat gewonnen"; } else if (points1 < points2) { document.getElementById("title").textContent = "Spieler 2 hat gewonnen"; } else { document.getElementById("title").textContent = "Unetschieden"; }
+        if (points1 > points2) { document.getElementById("title").textContent = "Spieler 1 hat gewonnen"; } else if (points1 < points2) { document.getElementById("title").textContent = "Spieler 2 hat gewonnen"; } else { document.getElementById("title").textContent = "Unentschieden"; }
 
         document.getElementById("endscreen").style.visibility = "visible";
     }, 1500);
@@ -99,7 +101,8 @@ function resetGame() {
 }
 
 function changeBigGame() {
-    //document.getElementById("memory-card").style.width = "100px";
+    //document.getElementById("memory-card").style.height = "15%";
+    //document.getElementById("memory-card").style.backgroundColor = "red";
     document.getElementById("memory-game-big").style.visibility = "visible";
     document.getElementById("memory-game").style.visibility = "hidden";
     count = 0;
@@ -114,16 +117,34 @@ function updateScore() {
     if (player1) {
         document.getElementById("LabelWHO").textContent = "Spieler 1 ist am Zug";
     } else {
-        document.getElementById("LabelWHO").textContent = "Spieler 2 ist am Zug";
+        if (einzelspieler == true) {
+            document.getElementById("LabelWHO").textContent = "Der Bot wird seinen Zug machen";
+        } else {
+            document.getElementById("LabelWHO").textContent = "Spieler 2 ist am Zug";
+        }
     }
+}
+
+function OpenIndex() {
+    window.open("index.html", "_self");
+}
+
+function OpenGameE() {
+    window.open("Game.html", "_self");
+}
+
+function OpenGameM() {
+    window.open("Game.html", "_self");
+    einzelspieler = false;
+    console.log(einzelspieler);
 }
 
 //shuffle ausgeklammert um einfacher zu testen
 (function shuffle() {
-    /* cards.forEach(card => {
+    cards.forEach(card => {
         let ramdomPos = Math.floor(Math.random() * 12);
         card.style.order = ramdomPos;
-    }); */
+    });
 })();
 
 

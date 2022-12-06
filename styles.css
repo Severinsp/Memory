@@ -27,8 +27,12 @@ img {
 
 body {
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     background: #060AB2;
+}
+
+#Index {
+    position: relative;
 }
 
 #memory-game {
@@ -60,7 +64,7 @@ body {
 
 .endscreen {
     visibility: hidden;
-    background-color: #514a6a;
+    background-color: #060AB2;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -68,7 +72,7 @@ body {
 
 .title {
     font-size: 5vw;
-    color: rgb(153, 90, 51);
+    color: rgb(255, 255, 255);
 }
 
 .memory-card {
@@ -81,18 +85,6 @@ body {
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
 }
-
-
-/* .memory-card-big {
-    width: calc(24% - 10px);
-    height: calc(33.333% - 10px);
-    margin: 0.5%;
-    position: relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-} */
 
 .memory-card:active {
     transform: scale(0.97);
@@ -130,6 +122,12 @@ body {
     left: 20px;
 }
 
+.MenuButton {
+    position: fixed;
+    top: 240px;
+    left: 20px;
+}
+
 .LabelWHO {
     position: fixed;
     color: aliceblue;
@@ -142,4 +140,13 @@ body {
     color: aliceblue;
     top: 200px;
     left: 20px;
+}
+
+#MenuButton {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }

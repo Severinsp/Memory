@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Memory Game</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="disable-select">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <section class="memory-game" id="memory-game">
+        <div class="memory-card" id="memory-card" data-framework="P1">
+            <img class="front-face" src="Pictures/1.png" alt="P1" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P1">
+            <img class="front-face" src="Pictures/1.png" alt="P1" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P2">
+            <img class="front-face" src="Pictures/2.png" alt="P2" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P2">
+            <img class="front-face" src="Pictures/2.png" alt="P2" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P3">
+            <img class="front-face" src="Pictures/3.png" alt="P3" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P3">
+            <img class="front-face" src="Pictures/3.png" alt="P3" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P4">
+            <img class="front-face" src="Pictures/4.png" alt="P4" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P4">
+            <img class="front-face" src="Pictures/4.png" alt="P4" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P5">
+            <img class="front-face" src="Pictures/5.png" alt="P5" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P5">
+            <img class="front-face" src="Pictures/5.png" alt="P5" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P6">
+            <img class="front-face" src="Pictures/6.png" alt="P6" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P6">
+            <img class="front-face" src="Pictures/6.png" alt="P6" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+    </section>
+    <section class="memory-game-big" id="memory-game-big">
+        <div class="memory-card" id="memory-card" data-framework="P1">
+            <img class="front-face" src="Pictures/1.png" alt="P1" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P1">
+            <img class="front-face" src="Pictures/1.png" alt="P1" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P2">
+            <img class="front-face" src="Pictures/2.png" alt="P2" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P2">
+            <img class="front-face" src="Pictures/2.png" alt="P2" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P3">
+            <img class="front-face" src="Pictures/3.png" alt="P3" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P3">
+            <img class="front-face" src="Pictures/3.png" alt="P3" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P4">
+            <img class="front-face" src="Pictures/4.png" alt="P4" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P4">
+            <img class="front-face" src="Pictures/4.png" alt="P4" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P5">
+            <img class="front-face" src="Pictures/5.png" alt="P5" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P5">
+            <img class="front-face" src="Pictures/5.png" alt="P5" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P6">
+            <img class="front-face" src="Pictures/6.png" alt="P6" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P6">
+            <img class="front-face" src="Pictures/6.png" alt="P6" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P7">
+            <img class="front-face" src="Pictures/7.png" alt="P7" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P7">
+            <img class="front-face" src="Pictures/7.png" alt="P7" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P8">
+            <img class="front-face" src="Pictures/8.png" alt="P8" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P8">
+            <img class="front-face" src="Pictures/8.png" alt="P8" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P9">
+            <img class="front-face" src="Pictures/9.png" alt="P9" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P9">
+            <img class="front-face" src="Pictures/9.png" alt="P9" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P10">
+            <img class="front-face" src="Pictures/10.png" alt="P10" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P10">
+            <img class="front-face" src="Pictures/10.png" alt="P10" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P11">
+            <img class="front-face" src="Pictures/11.png" alt="P11" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P11">
+            <img class="front-face" src="Pictures/11.png" alt="P11" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+        <div class="memory-card" id="memory-card" data-framework="P12">
+            <img class="front-face" src="Pictures/12.png" alt="P12" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+        <div class="memory-card" id="memory-card" data-framework="P12">
+            <img class="front-face" src="Pictures/12.png" alt="P12" />
+            <img class="back-face" src="Pictures/0.png" alt="Back" />
+        </div>
+
+    </section>
+    <div class="endscreen" id="endscreen">
+        <center class="title" id="title">Player .. won!</center>
+        <!-- <button>sdafkjksa</button> -->
+    </div>
+
+
+    <div class="NewGameButton">
+        <button type="button" class="btn btn-primary" onClick="resetGame();">Neues Spiel</button>
+    </div>
+    <div class="BigGameButton">
+        <button type="button" class="btn btn-primary" onClick="changeBigGame();">Grosses Spiel</button>
+    </div>
+    <div class="MenuButton">
+        <button type="button" class="btn btn-primary" onClick="OpenIndex();">Menu</button>
+    </div>
+    <div class="LabelWHO" id="LabelWHO">
+        <output></output>
+    </div>
+    <div class="LabelPoints" id="LabelPoints">
+        <output></output>
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
