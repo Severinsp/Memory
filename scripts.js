@@ -250,6 +250,8 @@ function endGame() {
         document.getElementById("title").style.visibility = "visible";
         document.getElementById("memory-game").style.visibility = "hidden";
         document.getElementById("hide").style.visibility = "hidden";
+        document.getElementById("visib").style.visibility = "visible";
+
        
             
             
@@ -257,14 +259,34 @@ function endGame() {
         
         
 
-        } else if (points1 < points2) { document.getElementById("title").textContent = "Spieler 2 hat gewonnen";
+        } else if (points1 < points2) { 
     
-        document.getElementById("endscreen").style.visibility = "visible";
-        document.getElementById("memory-game").style.visibility = "hidden";
+       
+        if(bot == true){
+            document.getElementById("endscreen").style.visibility = "visible";
+            document.getElementById("title").textContent = "Bot hat gewonnen"; 
+            document.getElementById("memory-game").style.visibility = "hidden";
+            document.getElementById("title").style.visibility = "visible";
+            document.getElementById("hide").style.visibility = "hidden";
+            document.getElementById("Canvas").style.visibility = "hidden";
+            document.getElementById("visib").style.visibility = "visible";
+
+
+        }
+        else{
+        document.getElementById("title").textContent = "Spieler 2 hat gewonnen"; 
+        const hey = document.getElementById("title");
+        document.getElementById("Canvas").style.visibility = "visible";
+        hey.classList.remove("title")
+        hey.classList.add("rainbow")
+        hey.classList.add("rainbow_text_animated")
+        
         document.getElementById("title").style.visibility = "visible";
+        document.getElementById("memory-game").style.visibility = "hidden";
         document.getElementById("hide").style.visibility = "hidden";
-        document.getElementById("Canvas").style.visibility = "hidden";
-    
+        document.getElementById("visib").style.visibility = "visible";
+
+     }
     
     
     
